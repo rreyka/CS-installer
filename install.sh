@@ -106,3 +106,9 @@ sudo netstat -tuln | grep $port
 
 echo "Installation and configuration of code-server is complete!"
 echo "You can access code-server in your browser at http://<IP-Server>:$port"
+
+echo "Switching shell to Bash and configuring prompt..."
+chsh -s /bin/bash $current_user
+echo "export PS1='\[\e[32m\]\w\[\e[0m\]$ '" >> ~/.bashrc
+
+exec bash
